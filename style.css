@@ -1,0 +1,92 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #0a0a0f; 
+  color: #eaeaea;
+  margin: 0;
+  padding: 0;
+}
+
+#top-banner {
+  background: #111;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 2px solid #00fff7;
+}
+.header-section h1 {
+  color: #00fff7;
+  margin: 0;
+}
+nav a {
+  color: #eaeaea;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+nav a:hover {
+  color: #ff0080;
+}
+
+.highlighted-text p {
+  padding: 1rem;
+  border-left: 3px solid #00fff7;
+}
+.btn {
+  background: #00fff7;
+  color: black;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold;
+}
+.btn:hover {
+  background: #ff0080;
+  color: white;
+}
+
+.card {
+  background: #151520;
+  padding: 1rem;
+  margin: 1rem auto;
+  max-width: 700px;
+  border-radius: 8px;
+}
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+.game-image, .game-circle {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.game-circle {
+  border-radius: 50%;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 0.8rem;
+  border-radius: 5px;
+  border: none;
+}
+.form-control:focus {
+  border: 2px solid #00fff7;
+  outline: none;
+}
+
+h2 {
+  color: #ff0080;
+}
+
+footer {
+  background: #111;
+  color: #aaa;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
