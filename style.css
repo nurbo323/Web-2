@@ -1,4 +1,4 @@
-/* === Общие стили === */
+/* Общие стили */
 body {
   font-family: Arial, sans-serif;
   background: #0a0a0f;
@@ -15,7 +15,7 @@ a {
   text-decoration: none;
 }
 
-/* === Header для страниц с верхним navbar === */
+/* Header для страниц с верхним navbar */
 #top-banner {
   background: #111;
   padding: 1rem;
@@ -39,7 +39,7 @@ a {
   color: #ff0080;
 }
 
-/* === Footer (общий для всех страниц) === */
+/* Footer (общий для всех страниц) */
 footer, .footer {
   background: #111;
   color: #aaa;
@@ -48,9 +48,8 @@ footer, .footer {
   margin-top: 2rem;
 }
 
-/* ============================= */
 /* HOME PAGE: Grid Layout + Sidebar */
-/* ============================= */
+
 .grid-layout {
   display: grid;
   grid-template-areas:
@@ -116,9 +115,8 @@ footer, .footer {
   grid-area: footer;
 }
 
-/* ============================= */
 /* NEWS PAGE: Flexbox Cards */
-/* ============================= */
+
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -147,9 +145,8 @@ footer, .footer {
   color: #eaeaea;
 }
 
-/* ============================= */
 /* CONTACT PAGE: Form */
-/* ============================= */
+
 .contact-section {
   display: flex;
   justify-content: center;
@@ -183,9 +180,9 @@ form {
   color: white;
 }
 
-/* ============================= */
+
 /* GALLERY PAGE: Grid Gallery */
-/* ============================= */
+
 .gallery-section {
   padding: 2rem;
   text-align: center;
