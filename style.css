@@ -1,92 +1,230 @@
+/* === Общие стили === */
 body {
   font-family: Arial, sans-serif;
-  background: #0a0a0f; 
+  background: #0a0a0f;
   color: #eaeaea;
   margin: 0;
   padding: 0;
 }
 
+h1, h2 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* === Header для страниц с верхним navbar === */
 #top-banner {
   background: #111;
   padding: 1rem;
   text-align: center;
   border-bottom: 2px solid #00fff7;
 }
-.header-section h1 {
+#top-banner h1 {
   color: #00fff7;
-  margin: 0;
+  margin-bottom: 0.5rem;
 }
-nav a {
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.nav a {
   color: #eaeaea;
-  text-decoration: none;
-  margin: 0 10px;
   font-weight: bold;
 }
-nav a:hover {
+.nav a:hover {
   color: #ff0080;
 }
 
-.highlighted-text p {
+/* === Footer (общий для всех страниц) === */
+footer, .footer {
+  background: #111;
+  color: #aaa;
+  text-align: center;
   padding: 1rem;
-  border-left: 3px solid #00fff7;
+  margin-top: 2rem;
+}
+
+/* ============================= */
+/* HOME PAGE: Grid Layout + Sidebar */
+/* ============================= */
+.grid-layout {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.header {
+  grid-area: header;
+  background: #111;
+  color: #00fff7;
+  text-align: center;
+  padding: 1rem;
+  border-bottom: 2px solid #00fff7;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background: #151520;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.sidebar a {
+  color: #eaeaea;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+.sidebar a:hover {
+  background: #00fff7;
+  color: black;
+}
+
+.main-content {
+  grid-area: main;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0a0a0f, #1a0030, #00333d);
+  padding: 2rem;
+  text-align: center;
+}
+.intro {
+  max-width: 600px;
+}
+.intro h2 {
+  font-size: 2.2rem;
+  color: #00fff7;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px #00fff7;
+}
+.intro p {
+  color: #ddd;
+  line-height: 1.5;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+/* ============================= */
+/* NEWS PAGE: Flexbox Cards */
+/* ============================= */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 1rem;
+}
+
+.card {
+  background: #151520;
+  padding: 1rem;
+  border-radius: 8px;
+  flex: 1 1 250px;
+  max-width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 255, 247, 0.3);
+}
+.card h2 {
+  color: #ff0080;
+  margin-bottom: 0.5rem;
+}
+.card p {
+  color: #eaeaea;
+}
+
+/* ============================= */
+/* CONTACT PAGE: Form */
+/* ============================= */
+.contact-section {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.form-control {
+  padding: 0.6rem;
+  border: none;
+  border-radius: 5px;
+}
+.form-control:focus {
+  border: 2px solid #00fff7;
+  outline: none;
 }
 .btn {
   background: #00fff7;
   color: black;
   padding: 0.6rem 1.2rem;
   border-radius: 20px;
-  text-decoration: none;
-  display: inline-block;
   font-weight: bold;
+  cursor: pointer;
+  border: none;
 }
 .btn:hover {
   background: #ff0080;
   color: white;
 }
 
-.card {
-  background: #151520;
-  padding: 1rem;
-  margin: 1rem auto;
-  max-width: 700px;
-  border-radius: 8px;
+/* ============================= */
+/* GALLERY PAGE: Grid Gallery */
+/* ============================= */
+.gallery-section {
+  padding: 2rem;
+  text-align: center;
+}
+.gallery-section h2 {
+  color: #00fff7;
+  margin-bottom: 1rem;
 }
 .gallery-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 15px;
-  justify-content: center;
 }
-.game-image, .game-circle {
-  width: 220px;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 10px;
+.gallery-grid figure {
+  margin: 0;
+  position: relative;
 }
-.game-circle {
-  border-radius: 50%;
-}
-
-.form-control {
+.gallery-grid img {
   width: 100%;
-  padding: 0.6rem;
-  margin-bottom: 0.8rem;
-  border-radius: 5px;
-  border: none;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s;
 }
-.form-control:focus {
-  border: 2px solid #00fff7;
-  outline: none;
+.gallery-grid img:hover {
+  transform: scale(1.05);
 }
-
-h2 {
-  color: #ff0080;
+.gallery-grid figcaption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 5px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 0.9rem;
+  opacity: 0;
+  border-radius: 0 0 8px 8px;
+  transition: opacity 0.3s;
 }
-
-footer {
-  background: #111;
-  color: #aaa;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
+.gallery-grid figure:hover figcaption {
+  opacity: 1;
 }
