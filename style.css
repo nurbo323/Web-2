@@ -1,230 +1,196 @@
-/* === Общие стили === */
+/* ================================
+   🎮 GameWorld Style.css
+   For Assignment #4 (Media Queries + Bootstrap)
+   ================================ */
+
 body {
-  font-family: Arial, sans-serif;
-  background: #0a0a0f;
-  color: #eaeaea;
-  margin: 0;
-  padding: 0;
+  background: radial-gradient(circle at top, #0a0a0f, #050509, #000);
+  color: #eee;
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  overflow-x: hidden;
+  line-height: 1.6;
 }
 
-h1, h2 {
-  margin: 0;
+/* ---------- Navbar ---------- */
+.navbar {
+  box-shadow: 0 0 15px rgba(0, 255, 247, 0.2);
 }
 
-a {
-  text-decoration: none;
-}
-
-/* === Header для страниц с верхним navbar === */
-#top-banner {
-  background: #111;
-  padding: 1rem;
-  text-align: center;
-  border-bottom: 2px solid #00fff7;
-}
-#top-banner h1 {
-  color: #00fff7;
-  margin-bottom: 0.5rem;
-}
-.nav {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
-.nav a {
-  color: #eaeaea;
+.navbar-brand {
   font-weight: bold;
-}
-.nav a:hover {
-  color: #ff0080;
-}
-
-/* === Footer (общий для всех страниц) === */
-footer, .footer {
-  background: #111;
-  color: #aaa;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
-}
-
-/* ============================= */
-/* HOME PAGE: Grid Layout + Sidebar */
-/* ============================= */
-.grid-layout {
-  display: grid;
-  grid-template-areas:
-    "header header"
-    "sidebar main"
-    "footer footer";
-  grid-template-columns: 200px 1fr;
-  grid-template-rows: auto 1fr auto;
-  min-height: 100vh;
-}
-
-.header {
-  grid-area: header;
-  background: #111;
-  color: #00fff7;
-  text-align: center;
-  padding: 1rem;
-  border-bottom: 2px solid #00fff7;
-}
-
-.sidebar {
-  grid-area: sidebar;
-  background: #151520;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.sidebar a {
-  color: #eaeaea;
-  padding: 0.5rem;
-  border-radius: 5px;
-}
-.sidebar a:hover {
-  background: #00fff7;
-  color: black;
-}
-
-.main-content {
-  grid-area: main;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #0a0a0f, #1a0030, #00333d);
-  padding: 2rem;
-  text-align: center;
-}
-.intro {
-  max-width: 600px;
-}
-.intro h2 {
-  font-size: 2.2rem;
-  color: #00fff7;
-  margin-bottom: 1rem;
+  letter-spacing: 1px;
   text-shadow: 0 0 10px #00fff7;
 }
-.intro p {
-  color: #ddd;
-  line-height: 1.5;
+
+.nav-link {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-.footer {
-  grid-area: footer;
+.nav-link:hover {
+  color: #00fff7 !important;
+  text-shadow: 0 0 8px #00fff7;
 }
 
-/* ============================= */
-/* NEWS PAGE: Flexbox Cards */
-/* ============================= */
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  padding: 1rem;
-}
-
-.card {
-  background: #151520;
-  padding: 1rem;
-  border-radius: 8px;
-  flex: 1 1 250px;
-  max-width: 300px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 255, 247, 0.3);
-}
-.card h2 {
-  color: #ff0080;
-  margin-bottom: 0.5rem;
-}
-.card p {
-  color: #eaeaea;
-}
-
-/* ============================= */
-/* CONTACT PAGE: Form */
-/* ============================= */
-.contact-section {
-  display: flex;
-  justify-content: center;
-  padding: 2rem;
-}
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.form-control {
-  padding: 0.6rem;
-  border: none;
-  border-radius: 5px;
-}
-.form-control:focus {
-  border: 2px solid #00fff7;
-  outline: none;
-}
-.btn {
-  background: #00fff7;
-  color: black;
-  padding: 0.6rem 1.2rem;
-  border-radius: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  border: none;
-}
-.btn:hover {
-  background: #ff0080;
-  color: white;
-}
-
-/* ============================= */
-/* GALLERY PAGE: Grid Gallery */
-/* ============================= */
-.gallery-section {
-  padding: 2rem;
-  text-align: center;
-}
-.gallery-section h2 {
+/* ---------- Headings ---------- */
+h1, h2, h3, h4, h5 {
   color: #00fff7;
+  text-shadow: 0 0 10px rgba(0, 255, 247, 0.6);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;
   margin-bottom: 1rem;
 }
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 15px;
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
 }
-.gallery-grid figure {
-  margin: 0;
-  position: relative;
-}
-.gallery-grid img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
+
+/* ---------- Buttons ---------- */
+.btn-outline-info, .btn-info {
   border-radius: 8px;
-  transition: transform 0.3s;
+  transition: all 0.3s ease;
+  font-weight: 500;
 }
-.gallery-grid img:hover {
-  transform: scale(1.05);
+
+.btn-outline-info:hover, .btn-info:hover {
+  box-shadow: 0 0 12px #00fff7;
+  transform: translateY(-3px);
 }
-.gallery-grid figcaption {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 5px;
-  background: rgba(0,0,0,0.6);
-  color: #fff;
+
+/* ---------- Cards ---------- */
+.card {
+  border-radius: 10px;
+  border: 1px solid rgba(0, 255, 247, 0.3);
+  background-color: #0d0d12;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 25px rgba(0, 255, 247, 0.4);
+}
+
+.card-title {
+  color: #00fff7;
+}
+
+.card-text {
+  color: #dcdcdc;
+}
+
+/* ---------- Gallery Images ---------- */
+img {
+  border-radius: 10px;
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(0, 255, 247, 0.3);
+}
+
+/* ---------- Carousel ---------- */
+.carousel-inner img {
+  height: 450px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+}
+
+/* ---------- Footer ---------- */
+footer {
+  background-color: #0a0a0f;
+  color: #aaa;
+  border-top: 1px solid rgba(0, 255, 247, 0.3);
+  padding: 15px 0;
   font-size: 0.9rem;
-  opacity: 0;
-  border-radius: 0 0 8px 8px;
-  transition: opacity 0.3s;
+  letter-spacing: 0.5px;
+  text-align: center;
 }
-.gallery-grid figure:hover figcaption {
-  opacity: 1;
+
+/* ---------- Sections ---------- */
+section {
+  padding: 60px 0;
+}
+
+.container p {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  color: #ccc;
+}
+
+/* ---------- Responsive Typography ---------- */
+@media (max-width: 992px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.6rem;
+  }
+  .card-text {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+  .card {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+  p {
+    font-size: 0.85rem;
+  }
+}
+
+/* ---------- Utility ---------- */
+.text-pink {
+  color: #ff77ff;
+}
+
+.border-pink {
+  border-color: #ff77ff !important;
+}
+
+.border-info {
+  border-color: #00fff7 !important;
+}
+
+.shadow {
+  box-shadow: 0 0 10px rgba(0, 255, 247, 0.15) !important;
+}
+
+.rounded {
+  border-radius: 10px !important;
+}
+
+.bg-dark {
+  background-color: #0a0a0f !important;
+}
+
+.bg-gradient-dark {
+  background: linear-gradient(145deg, #0d0d12, #050509);
 }
